@@ -11,6 +11,5 @@ if (process.argv.length === 3) {
   let numberParam = process.argv[3]
   let textFileWithParam = fs.readFileSync(process.argv[4], 'utf-8')
   let lastLine = textFileWithParam.split('\n').splice(- numberParam, numberParam)
-  //console.log(lastLine.length)
   console.log(lastLine.join('\n'))
 }
