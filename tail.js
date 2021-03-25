@@ -13,3 +13,4 @@ if (process.argv.length === 3) {
   let lastLine = textFileWithParam.split('\n').splice(- numberParam, numberParam)
   console.log(lastLine.join('\n'))
 }
+
