@@ -31,6 +31,7 @@ else if (process.argv.length === 5 && !fs.statSync(process.argv[4]).isFile()) {
   console.log('only file are accepted')
   process.exit(1)
 }
+//check if is number in param
 else if (process.argv.length === 5 && isNaN(process.argv[3])) {
   console.log('Error: argument in parameter is not a number')
   process.exit(1)
