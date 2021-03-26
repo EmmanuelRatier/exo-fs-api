@@ -11,7 +11,7 @@ if (!fs.existsSync(process.argv[2]) && process.argv.length === 3) {
   process.exit(1)
 }
 // check if isFile
-else if (!fs.statSync(process.argv[2]).isFile() && process.argv.length === 3) {
+else if (process.argv.length === 3 && !fs.statSync(process.argv[2]).isFile()) {
   console.log('only file are accepted')
   process.exit(1)
 }
@@ -22,13 +22,17 @@ else if (process.argv.length === 3) {
   console.log(lastTenLine.join('\n'))
 }
 //check if file exist for program with param
-else if (!fs.existsSync(process.argv[4]) && process.argv.length === 5) {
+else if (process.argv.length === 5 && !fs.existsSync(process.argv[4])) {
   console.log('Error: file does not exist')
   process.exit(1)
 }
 // check if isFile with param
-else if (!fs.statSync(process.argv[4]).isFile() && process.argv.length === 5) {
+else if (process.argv.length === 5 && !fs.statSync(process.argv[4]).isFile()) {
   console.log('only file are accepted')
+  process.exit(1)
+}
+else if (process.argv.length === 5 && isNaN(process.argv[3])) {
+  console.log('Error: argument in parameter is not a number')
   process.exit(1)
 }
 else if (process.argv.length === 5 && process.argv[2] === '-n') {
